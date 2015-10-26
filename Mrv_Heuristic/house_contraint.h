@@ -11,83 +11,20 @@ map<string, int> drink;
 
 using namespace std;
 
-/*
-void next_unassign_house_var(vector<node*> &var)
-{
-  for(int i=0; i<var.size();i++)
-  {
-    if(var[i]->assign == -1)
-      {
-        var[i]->assign = 1; 
-        return;
-      }
-  }
-  return;
-}
-*/
-
-
 void next_unassign_house_var(vector<node*> &var, int index)
 {
-//    if(var[index]->assign == -1)
-        var[index]->assign = 1; 
-
-  return;
+    var[index]->assign = 1; 
+    return;
 }
-
-/*	
-void unassign_next_unassign_house_var(vector<node*> &var)
-{
-  for(int i=var.size()-1; i>=0 ;i--)
-  {
-    if(var[i]->assign == 1)
-      {
-        var[i]->assign = -1;
-        return;
-      }
-  }
-  return;
-}
-
-*/
 
 void unassign_next_unassign_house_var(vector<node*> &var, int index)
 {
-  //  if(var[index]->assign == 1)
-        var[index]->assign = -1;
+  var[index]->assign = -1;
   return;
 }
 
-/*
-void assign_house_domain(vector<node*> &var, vector<int> domain, int pos)
-{
-  for(int i=var.size()-1; i>=0; i--)
-  {
-    if(var[i]->assign == 1)
-    {
-      var[i]->house_no = pos+1;
-      if(var[i]->category == "house")
-	house[var[i]->name] = pos+1;
-      else if(var[i]->category == "man")
-        man[var[i]->name] = pos+1;
-      else if(var[i]->category == "animal")
-        animal[var[i]->name] = pos+1;
-      else if(var[i]->category == "eat")
-        eat[var[i]->name] = pos+1;
-      else 
-        drink[var[i]->name] = pos+1;
- 
-      return;
-    }
-  }
-}
-
-*/
-
 void assign_house_domain(vector<node*> &var, vector<int> domain, int pos, int i)
 {
-   // if(var[i]->assign == 1)
-   // {
       var[i]->house_no = pos+1;
       if(var[i]->category == "house")
         house[var[i]->name] = pos+1;
@@ -101,34 +38,7 @@ void assign_house_domain(vector<node*> &var, vector<int> domain, int pos, int i)
         drink[var[i]->name] = pos+1;
  
       return;
-   // }
 }
-
-/*
-void unassign_house_domain(vector<node*> &var, vector<int> domain, int pos)
-{
-  for(int i=var.size()-1; i>=0; i--)
-  {
-    if(var[i]->assign == 1)
-    {
-      var[i]->house_no = -1;
-      if(var[i]->category == "house")
-        house[var[i]->name] = -1;
-      else if(var[i]->category == "man")
-        man[var[i]->name] = -1;
-      else if(var[i]->category == "animal")
-        animal[var[i]->name] = -1;
-      else if(var[i]->category == "eat")
-        eat[var[i]->name] = -1;
-      else 
-        drink[var[i]->name] = -1;
-
-      return;
-    }
-  }
-}
-
-*/
 
 void unassign_house_domain(vector<node*> &var, vector<int> domain, int pos, int i)
 {

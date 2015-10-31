@@ -11,10 +11,12 @@ if __name__ == "__main__":
 
     while(1):
         a = input("Enter the command ")
+        
         if (a == "init"):
             obj_board = Board(6, board)
             obj_board.initialise()
             print_board(Board.global_board)
+            
         elif("put" in a):
             command = a.split()
             if (len(command)!= 4):
@@ -36,6 +38,7 @@ if __name__ == "__main__":
             else:
                 Board.global_board = copy.deepcopy(curr_board)
                 print_board(Board.global_board)
+                
         elif("move" in a):
             command = a.split()
             if (len(command)!= 2):
@@ -58,5 +61,6 @@ if __name__ == "__main__":
                 else:
                     Board.global_board = copy.deepcopy(curr_board)
                     print_board(Board.global_board)
+                    
         else:
             print("Wrong Option")
